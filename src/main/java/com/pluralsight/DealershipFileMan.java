@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class DealershipFileMan {
     private String FILE_NAME;
@@ -25,7 +26,10 @@ public class DealershipFileMan {
                     String color = parts[5];
                     int odometer = Integer.parseInt(parts[6]);
                     double price = Double.parseDouble(parts[7]);
-                    double price = Double.parseDouble(parts[7]);
+                    Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color,odometer, price);
+
+                    ArrayList<Vehicle> vehicles = new ArrayList<>();
+                    vehicles.add(vehicle);
                 }
             }
         } catch (IOException e) {
